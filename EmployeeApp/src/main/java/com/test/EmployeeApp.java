@@ -10,12 +10,13 @@ public class EmployeeApp {
         EmployeeDao dao = new EmployeeDaoImpl();
  
         while (true) {
-            System.out.println("\n1.Add 2.Update 3.Delete 4.View 5.Exit");
+        	System.out.print("\nChoose an option from below : ");
+            System.out.println("\n\t 1. Add an employee\n\t 2. Update employee details\n\t 3. Delete an employee\n\t 4. View all employee data\n\t 5. Exit");
             int choice = sc.nextInt();
  
             switch (choice) {
                 case 1:
-                    System.out.print("Enter id name salary dept: ");
+                    System.out.println("Enter id, name, salary and dept of the employee(press enter after each data): ");
                     dao.addEmployee(new Employee(
                             sc.nextInt(),
                             sc.next(),
@@ -26,7 +27,7 @@ public class EmployeeApp {
                     break;
  
                 case 2:
-                    System.out.print("Enter id name salary dept: ");
+                    System.out.println("Enter id, name, salary and dept of the employee(press enter after each data): ");
                     dao.updateEmployee(new Employee(
                             sc.nextInt(),
                             sc.next(),
@@ -43,6 +44,7 @@ public class EmployeeApp {
                     break;
  
                 case 4:
+                	System.out.println("Employee Details:");
                     dao.getAllEmployee().forEach(System.out::println);
                     break;
  
