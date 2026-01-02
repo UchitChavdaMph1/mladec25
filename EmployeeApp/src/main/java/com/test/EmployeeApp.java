@@ -49,6 +49,7 @@ public class EmployeeApp {
                     break;
  
                 case 5:
+                	System.out.println("App exited, thank you.");
                     System.exit(0);
             }
         }
