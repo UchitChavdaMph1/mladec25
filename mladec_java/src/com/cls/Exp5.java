@@ -8,20 +8,27 @@ public class Exp5 {
 
 	public static void main(String[] args) {
 		
-		List<String> names = Arrays.asList("rohit", "kohli", "dravid", "dhoni", "pant", "sky", "axar");
+//		List<String> names = Arrays.asList("rohit", "kohli", "dravid", "dhoni", "pant", "sky", "axar");
+//		
+//		Collections.sort(names);
+//		names.forEach(System.out::println);
+//		
+//		System.out.println("==========");
+//		
+//		Collections.shuffle(names);
+//		names.forEach(System.out::println);
+//		
+//System.out.println("==========");
+//		
+//		Collections.shuffle(names);
+//		names.forEach(System.out::println);
 		
-		Collections.sort(names);
-		names.forEach(System.out::println);
+		Integer x = 127;
+		Integer y = 127;
 		
-		System.out.println("==========");
+		System.out.println(x == y);
 		
-		Collections.shuffle(names);
-		names.forEach(System.out::println);
 		
-System.out.println("==========");
-		
-		Collections.shuffle(names);
-		names.forEach(System.out::println);
 		
 
 	}
