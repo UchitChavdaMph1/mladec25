@@ -9,7 +9,7 @@
 <body>
 	<h2>Add Employee Page</h2><br>
 	
-	<form action="">
+	<form action="addEmployee" method="post">
 	Enter Employee ID : <input type="number" name="eId"><br><br>
 	Enter Employee Name : <input type="text" name="eName"><br><br>
 	Enter Employee Salary : <input type="number" name="eSalary"><br><br>

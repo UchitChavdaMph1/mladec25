@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Employee Management Application</h1>
-	
+	<h2>Employee Management System</h2>
 	<a href="addEmployee.jsp">Add Employee</a><br>
 	<a href="updateEmployee.jsp">Update Employee</a><br>
 	<a href="deleteEmployee.jsp">Delete Employee</a><br>
-	<a href="viewEmployees.jsp">View All Employee</a><br>
+	<a href="viewEmployees">View Employees</a>
 </body>
 </html>
