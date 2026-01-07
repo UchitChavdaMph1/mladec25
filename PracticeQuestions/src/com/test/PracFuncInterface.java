@@ -1,0 +1,20 @@
+package com.test;
+
+@FunctionalInterface
+interface Greet{
+    public void greet(String name, String msg);
+}
+ 
+ 
+public class PracFuncInterface {
+   
+    public static void main(String[] args) {
+       
+        Greet g = (name , msg) -> {
+            System.out.println("Hi " + name + " " + msg);
+        };
+       
+        g.greet("Uchit", "Good evening");
+    }
+ 
+}
