@@ -1,14 +1,26 @@
 package com.test;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "book")
+@NamedQueries({
+	@NamedQuery(name = "customQuery", query = "From Book b where b.b_name = :name"),
+	@NamedQuery(name = "customQueryId", query = "From Book b where b.id = :id")
+})
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Book {
 	
 	@Id
@@ -43,6 +55,11 @@ public class Book {
 	}
 	public void setB_price(int b_price) {
 		this.b_price = b_price;
+	}
+	
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", b_name=" + b_name + ", b_author=" + b_author + ", b_price=" + b_price + "]";
 	}
 	
 	

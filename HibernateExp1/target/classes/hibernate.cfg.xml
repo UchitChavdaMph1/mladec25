@@ -15,6 +15,7 @@
 		<property name="hbm2ddl.auto">update</property>
 <!-- 		<mapping resource="com/test/Book.hbm.xml" /> -->
  			<mapping class="com.test.Book"/>
+<!--			<mapping class="com.test.NamedQueryTest"/> -->
 <!-- 		<mapping class="com.test.Product"/> -->
 	</session-factory>
 </hibernate-configuration>
