@@ -33,6 +33,8 @@ public class TestDemo {
 		Expression ex2 = exp.parseExpression("55 * 7");
 		Integer a = ex2.getValue(Integer.class);
 		System.out.println("Numerical Data : " + a);
+		
+		
 	}
 
 }
