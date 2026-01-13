@@ -7,11 +7,13 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.test.model.Customer;
 import com.test.model.CustomerMapper;
 
 @Component
+@Transactional
 public class CustomerDAO {
 	
 	private JdbcTemplate jdbcTemplate;
@@ -29,6 +31,7 @@ public class CustomerDAO {
 	
 	private final String get_all_sql = "select * from customer1";
 	
+	@Transactional
 	public boolean createCustomer(Customer obj) {
 		return jdbcTemplate.update(insert_sql, obj.getId(), obj.getFirstName(), obj.getLastName(), obj.getLocation()) > 0;
 	}

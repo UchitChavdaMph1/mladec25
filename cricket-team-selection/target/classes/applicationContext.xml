@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ================= BATSMAN DATABASE ================= -->
+
+    <bean id="battingDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/cricket_batting_db"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root@39"/>
+    </bean>
+
+    <bean id="battingJdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="battingDataSource"/>
+    </bean>
+
+    <!-- ================= BOWLING DATABASE ================= -->
+
+    <bean id="bowlingDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/cricket_bowling_db"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root@39"/>
+    </bean>
+
+    <bean id="bowlingJdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="bowlingDataSource"/>
+    </bean>
+    
+    <!-- ================= DAO BEANS ================= -->
+
+	<bean id="playerDao" class="com.worldcup.dao.impl.PlayerDaoImpl">
+	    <property name="jdbcTemplate" ref="battingJdbcTemplate"/>
+	</bean>
+	
+	<bean id="battingStatsDao" class="com.worldcup.dao.impl.BattingStatsDaoImpl">
+	    <property name="jdbcTemplate" ref="battingJdbcTemplate"/>
+	</bean>
+	
+	<bean id="bowlingStatsDao" class="com.worldcup.dao.impl.BowlingStatsDaoImpl">
+	    <property name="jdbcTemplate" ref="bowlingJdbcTemplate"/>
+	</bean>
+	
+	<!-- ================= SERVICE BEAN ================= -->
+
+	<bean id="teamSelectionService"
+	      class="com.worldcup.service.impl.TeamSelectionServiceImpl">
+	
+	    <property name="playerDao" ref="playerDao"/>
+	    <property name="battingStatsDao" ref="battingStatsDao"/>
+	    <property name="bowlingStatsDao" ref="bowlingStatsDao"/>
+	
+	</bean>
+	
+    
+
+</beans>
