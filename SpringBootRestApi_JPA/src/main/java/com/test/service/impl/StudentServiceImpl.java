@@ -1,0 +1,44 @@
+package com.test.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.dao.StudentDao;
+import com.test.entity.Student;
+import com.test.service.StudentService;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+	
+	@Autowired
+	private StudentDao dao;
+
+	@Override
+	public Student ceateStudent(Student std) {
+		return dao.ceateStudent(std);
+	}
+
+	@Override
+	public Optional<Student> getStudentById(int id) {
+		return dao.getStudentById(id);
+	}
+
+	@Override
+	public Student updateStudentById(Student std) {
+		return dao.updateStudentById(std);
+	}
+
+	@Override
+	public List<Student> deleteStudentById(int id) {
+		return dao.deleteStudentById(id);
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		return dao.getAllStudents();
+	}
+
+}
