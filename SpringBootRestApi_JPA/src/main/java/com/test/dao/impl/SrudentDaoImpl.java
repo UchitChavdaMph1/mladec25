@@ -42,4 +42,14 @@ public class SrudentDaoImpl implements StudentDao{
 		return repository.findAll();
 	}
 
+	@Override
+	public Optional<Student> getStudentByName(String name) {
+		return repository.getStudentByName(name);
+	}
+
+	@Override
+	public List<Student> getStudentByDepartment(String department) {
+		return repository.getStudentByDepartment(department);
+	}
+
 }
