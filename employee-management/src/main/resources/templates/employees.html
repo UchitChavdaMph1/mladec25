@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Employees</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Employee List</h2>
+
+    <a class="button"
+	   sec:authorize="hasRole('ADMIN')"
+	   th:href="@{/employees/add}">
+	   + Add Employee
+	</a>
+
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th sec:authorize="hasRole('ADMIN')">Action</th>
+        </tr>
+
+        <tr th:each="emp : ${employees}">
+            <td th:text="${emp.id}"></td>
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.email}"></td>
+            <td th:text="${emp.department}"></td>
+            <td th:text="${emp.salary}"></td>
+            <td>
+                <a class="button delete"
+				   sec:authorize="hasRole('ADMIN')"
+				   th:href="@{/employees/delete/{id}(id=${emp.id})}">
+				   Delete
+				</a>
+
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <a class="button logout" th:href="@{/logout}">Logout</a>
+</div>
+
+</body>
+</html>

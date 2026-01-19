@@ -44,6 +44,41 @@ public class SecurityConfig {
     }
 
     // 3️⃣ Security Rules
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//
+//        http
+//            .csrf(csrf -> csrf.disable())
+//            .authorizeHttpRequests(auth -> auth
+//
+//                // READ APIs → ADMIN & USER
+//                .requestMatchers(HttpMethod.GET, "/api/employees/**")
+//                .hasAnyRole("ADMIN", "USER")
+//
+//                // WRITE APIs → ADMIN only
+//                .requestMatchers(HttpMethod.POST, "/api/employees/**")
+//                .hasRole("ADMIN")
+//                .requestMatchers(HttpMethod.PUT, "/api/employees/**")
+//                .hasRole("ADMIN")
+//                .requestMatchers(HttpMethod.DELETE, "/api/employees/**")
+//                .hasRole("ADMIN")
+//
+//                // Any other request must be authenticated
+//                .anyRequest().authenticated()
+//            )
+//            .formLogin(form -> form
+//                    .loginPage("/login")
+//                    .defaultSuccessUrl("/employees", true)
+//                    .permitAll()
+//            )
+//            .logout(logout -> logout
+//                    .logoutSuccessUrl("/login?logout"));
+//
+//        return http.build();
+//    }
+    
+    
+    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -51,23 +86,41 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
 
-                // READ APIs → ADMIN & USER
+                // ✅ Allow static resources
+                .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+
+                // Login page
+                .requestMatchers("/login").permitAll()
+
+                // ADMIN UI actions
+                .requestMatchers("/employees/add", "/employees/save", "/employees/delete/**")
+                .hasRole("ADMIN")
+
+                // Employee pages
+                .requestMatchers("/employees", "/employees/**")
+                .hasAnyRole("ADMIN", "USER")
+
+                // REST APIs
                 .requestMatchers(HttpMethod.GET, "/api/employees/**")
                 .hasAnyRole("ADMIN", "USER")
 
-                // WRITE APIs → ADMIN only
-                .requestMatchers(HttpMethod.POST, "/api/employees/**")
-                .hasRole("ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/api/employees/**")
-                .hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/api/employees/**")
-                .hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/api/employees/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/api/employees/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN")
 
-                // Any other request must be authenticated
                 .anyRequest().authenticated()
             )
-            .httpBasic(Customizer.withDefaults());
+            .formLogin(form -> form
+                .loginPage("/login")
+                .defaultSuccessUrl("/employees", true)
+                .permitAll()
+            )
+            .logout(logout -> logout
+                .logoutSuccessUrl("/login?logout")
+            );
 
         return http.build();
     }
+
+
 }
