@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #222;
+        }
+
+        header {
+            background: #1a237e;
+            color: #fff;
+            padding: 30px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(30,40,100,0.08);
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: left;
+            margin: 0 0 0 40px;
+            color: #3949ab;
+        }
+
+        nav {
+            text-align: right;
+            margin: 0 40px 0 0;
+        }
+
+        nav a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 12px;
+            font-size: 1rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+        nav a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3949ab;
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+        }
+        nav a:hover {
+            color: #3949ab;
+        }
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e3e3e3;
+            margin: 0 0 30px 0;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1a237e;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .services-div {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(60,80,180,0.07);
+            border-radius: 18px;
+            margin: 40px auto;
+            max-width: 1400px;
+        }
+
+        .service-card {
+            background: #f5f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(60,80,180,0.06);
+            padding: 18px 12px 18px 12px;
+            width: 260px;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            margin: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(60,80,180,0.13);
+            background: #e8eaf6;
+        }
+        .service-card img {
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(60,80,180,0.09);
+            margin-bottom: 14px;
+            max-width: 100%;
+            height: 110px;
+            object-fit: cover;
+            background: #fff;
+            transition: box-shadow 0.2s;
+        }
+        .service-card:hover img {
+            box-shadow: 0 6px 18px rgba(60,80,180,0.18);
+        }
+        .service-title {
+            font-size: 1.15rem;
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .service-desc {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 0;
+            text-align: center;
+            min-height: 48px;
+        }
+
+        @media (max-width: 900px) {
+            .services-div {
+                gap: 18px;
+            }
+            .service-card {
+                width: 180px;
+                min-width: 120px;
+                padding: 14px 6px 18px 6px;
+            }
+            .service-card img {
+                height: 70px;
+            }
+        }
+        @media (max-width: 600px) {
+            .services-div {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px 0;
+            }
+            .brand, nav {
+                margin: 0 10px;
+            }
+            .services-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Custom Website</h1>
+    </header>
+    <div class="brand">MLA-CODERS</div>
+    <nav>
+        <a href="website.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="login.html">SignIn</a>
+        <a href="register.html">SignUp</a>
+    </nav>
+    <hr>
+    <div class="services-title">Our Services</div>
+    <div class="services-div">
+        <div class="service-card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.EXOmoirpmpxnvtWhK9Ag9wHaHa?w=189&h=189&c=7&r=0&o=7&pid=1.7&rm=3" alt="Web Development">
+            <div class="service-title">Web Development</div>
+            <div class="service-desc">Custom websites, web apps, and e-commerce solutions built with modern technologies for your business needs.</div>
+        </div>
+        <div class="service-card">
+            <img src="https://www.bing.com/th/id/OIP.K3FEsBtG2ge1R0SY1N-HEwHaE7?w=260&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Mobile App Development">
+            <div class="service-title">Mobile App Development</div>
+            <div class="service-desc">Native and cross-platform mobile apps for Android and iOS, designed for performance and great user experience.</div>
+        </div>
+        <div class="service-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.hVLeXn7-nooTkwlP6NCgdgAAAA?w=230&h=150&c=6&o=7&pid=1.7&rm=3" alt="UI/UX Design">
+            <div class="service-title">UI/UX Design</div>
+            <div class="service-desc">Attractive, user-friendly interfaces and experiences for web and mobile platforms to engage your audience.</div>
+        </div>
+        <div class="service-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.gZaMYqCZzoGqmelJwJTAGgHaHZ?w=150&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Digital Marketing">
+            <div class="service-title">Digital Marketing</div>
+            <div class="service-desc">SEO, SEM, social media, and content marketing services to boost your online presence and reach more customers.</div>
+        </div>
+        <div class="service-card">
+            <img src="data:image/webp;base64,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" alt="Cloud Solutions">
+            <div class="service-title">Cloud Solutions</div>
+            <div class="service-desc">Cloud migration, hosting, and scalable infrastructure setup for secure and reliable business operations.</div>
+        </div>
+    </div>
+</body>
+</html>

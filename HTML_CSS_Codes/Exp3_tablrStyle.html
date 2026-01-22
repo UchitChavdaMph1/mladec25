@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Tables</title>
+</head>
+
+<style>
+    body {
+        font: colibri, sans-serif;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.2rem;
+        text-align: center;
+        border: 3px, solid #000;
+    }
+
+    tr > td:hover {
+        background-color: white;
+        color: white;
+        border-color: white;
+    }
+
+    tbody > tr:hover {
+        background-color: blue;
+        color: white;
+        border-color: white;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: gray;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: yellow;
+    }
+
+    thead {
+        background-color: #2c2c2c;
+        color: white;
+    }
+
+
+</style>
+
+<body>
+    <table class="zebra">
+        <thead>
+            <tr>
+                <th>S.NO</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rahul</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rohit</td>
+                <td>rohit@java.com</td>
+                <td>Apple</td>
+                <td>12345</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <canvas id="myCanvas" width="800" height="220" style="border:1px solid #000; display:block; margin:1rem 0;"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // background
+        ctx.fillStyle = '#fafafa';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // simple grid
+        ctx.strokeStyle = '#e6e6e6';
+        for (let i = 0; i < canvas.width; i += 50) {
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, canvas.height);
+            ctx.stroke();
+        }
+        for (let j = 0; j < canvas.height; j += 50) {
+            ctx.beginPath();
+            ctx.moveTo(0, j);
+            ctx.lineTo(canvas.width, j);
+            ctx.stroke();
+        }
+
+        // static shapes
+        ctx.fillStyle = 'steelblue';
+        ctx.fillRect(20, 30, 140, 60);
+
+        ctx.beginPath();
+        ctx.arc(360, 80, 40, 0, Math.PI * 2);
+        ctx.fillStyle = 'tomato';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(520, 170);
+        ctx.lineTo(760, 30);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'seagreen';
+        ctx.stroke();
+
+        // label
+        ctx.fillStyle = '#222';
+        ctx.font = '18px sans-serif';
+        ctx.fillText('Basic HTML Canvas demo', 20, 130);
+
+        // simple animation (moving dot)
+        let pos = 0;
+        function animate() {
+            // clear region used by the animation
+            ctx.clearRect(600, 10, 180, 80);
+
+            // redraw a small background for the animated area
+            ctx.fillStyle = '#fafafa';
+            ctx.fillRect(600, 10, 180, 80);
+
+            // moving dot
+            ctx.beginPath();
+            ctx.arc(610 + (pos % 160), 50, 14, 0, Math.PI * 2);
+            ctx.fillStyle = 'purple';
+            ctx.fill();
+
+            pos += 2;
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+
+    <figure>
+        <img src="https://www.bing.com/th/id/OIP.3J2q-ML2eSU3xPhgV4ez0AHaE8?w=295&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="dog image" />
+        <figcaption>
+            <p>This is a dog</p>
+        </figcaption>
+    </figure>
+
+</body>
+</html>

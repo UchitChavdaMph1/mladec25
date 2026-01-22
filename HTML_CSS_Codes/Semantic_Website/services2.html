@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | MLA-CODERS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header, nav, main, section, article, aside, footer { padding: 16px; }
+        header { background: rgba(26,35,126,0.95); color: #fff; border-radius: 0 0 24px 24px; }
+        nav {
+            background: rgba(227,230,243,0.95);
+            border-radius: 0 0 16px 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(60,80,180,0.07);
+        }
+        nav a {
+            margin: 0 14px;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.2s, text-shadow 0.2s;
+            position: relative;
+        }
+        nav a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3949ab;
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+        }
+        nav a:hover {
+            color: #3949ab;
+            text-shadow: 0 2px 8px #b0b7e6;
+        }
+        nav a:hover:after {
+            width: 100%;
+        }
+        main {
+            max-width: 900px;
+            margin: 32px auto;
+            background: rgba(255,255,255,0.93);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(60,80,180,0.13);
+        }
+        section { margin-bottom: 24px; }
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: space-around;
+        }
+        .service-card {
+            background: #e3e6f3;
+            border-radius: 16px;
+            width: 260px;
+            padding: 18px;
+            box-shadow: 0 2px 12px rgba(60,80,180,0.08);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 12px;
+        }
+        .service-card:hover {
+            transform: rotate(-2deg) scale(1.04);
+            box-shadow: 0 8px 32px rgba(60,80,180,0.18);
+            background: #f5f7fa;
+        }
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 3px solid #3949ab;
+            transform: rotate(-8deg);
+            transition: transform 0.3s;
+        }
+        .service-card:hover img {
+            transform: rotate(8deg) scale(1.1);
+        }
+        footer {
+            background: rgba(26,35,126,0.95);
+            color: #fff;
+            text-align: center;
+            border-radius: 24px 24px 0 0;
+            margin-top: 32px;
+        }
+        @media (max-width: 700px) {
+            .service-list { flex-direction: column; align-items: center; }
+            main { margin: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MLA-CODERS</h1>
+        <p>Your one-stop solution for web services</p>
+    </header>
+    <nav>
+        <a href="home2.html">Home</a>
+        <a href="services2.html">Services</a>
+        <a href="products2.html">Products</a>
+        <a href="contact2.html">Contact</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div class="service-card">
+                    <img src="https://img.icons8.com/color/96/000000/source-code.png" alt="Web Development">
+                    <h3>Web Development</h3>
+                    <p>Responsive and modern websites using the latest technologies.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://img.icons8.com/color/96/000000/smartphone-tablet.png" alt="App Development">
+                    <h3>App Development</h3>
+                    <p>Native and cross-platform mobile apps for Android and iOS.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://img.icons8.com/color/96/000000/design.png" alt="UI/UX Design">
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful and user-friendly interfaces for web and mobile.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://img.icons8.com/color/96/000000/marketing.png" alt="Digital Marketing">
+                    <h3>Digital Marketing</h3>
+                    <p>SEO, SEM, and social media marketing to grow your business.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 MLA-CODERS. All rights reserved.
+    </footer>
+</body>
+</html>

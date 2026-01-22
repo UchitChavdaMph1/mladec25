@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+            color: #222;
+        }
+
+        header {
+            background: #1a237e;
+            color: #fff;
+            padding: 30px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(30,40,100,0.08);
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: left;
+            margin: 0 0 0 40px;
+            color: #3949ab;
+        }
+
+        nav {
+            text-align: right;
+            margin: 0 40px 0 0;
+        }
+
+        nav a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 12px;
+            font-size: 1rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+        nav a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3949ab;
+            transition: width .3s;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+        }
+        nav a:hover {
+            color: #3949ab;
+        }
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e3e3e3;
+            margin: 0 0 30px 0;
+        }
+
+        .product-div {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(60,80,180,0.07);
+            border-radius: 18px;
+            margin: 40px auto;
+            max-width: 1400px;
+        }
+
+        .product-div > p {
+            background: #f5f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(60,80,180,0.06);
+            padding: 18px 12px 10px 12px;
+            width: 210px;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            margin: 0;
+        }
+        .product-div > p:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(60,80,180,0.13);
+            background: #e8eaf6;
+        }
+        .product-div img {
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(60,80,180,0.09);
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            background: #fff;
+            transition: box-shadow 0.2s;
+        }
+        .product-div > p:hover img {
+            box-shadow: 0 6px 18px rgba(60,80,180,0.18);
+        }
+        .product-div > p {
+            content: "";
+            font-size: 1.1rem;
+            color: #3949ab;
+            font-weight: 600;
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .product-div {
+                gap: 18px;
+            }
+            .product-div > p {
+                width: 160px;
+                min-width: 120px;
+            }
+        }
+        @media (max-width: 600px) {
+            .product-div {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px 0;
+            }
+            .brand, nav {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Custom Website</h1>
+    </header>
+    <div class="brand">MLA-CODERS</div>
+    <nav>
+        <a href="website.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="login.html">SignIn</a>
+        <a href="register.html">SignUp</a>
+    </nav>
+    <hr>
+    <div class="product-div">
+        <p>
+            <img src="https://tse3.mm.bing.net/th/id/OIP.zmW_lvh8ao3VPADGTQpmigHaHa?w=219&h=219&c=7&r=0&o=7&pid=1.7&rm=3"
+                width="55%">
+                Wireless Headphones
+        </p>
+        <p>
+            <img src="https://tse3.mm.bing.net/th?q=Smart+Fitness+Band+with+Heart+Rate+Monitor&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=strict&t=1&mw=247"
+            width="55%">
+            Smart Fitness Band
+        </p>
+        <p>
+            <img src="https://tse1.mm.bing.net/th/id/OIP.t2Gh_XGI5CFUQX0o4Z8odQHaEK?w=276&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+            width="60%">
+            Bluetooth Speaker
+        </p>
+        <p>
+            <img src="https://tse2.mm.bing.net/th/id/OIP.ATG8Xs92e9Q57w86raCa5QHaHa?w=213&h=213&c=7&r=0&o=7&pid=1.7&rm=3"
+            width="60%">
+            Smart LED Bulb
+        </p>
+        <p>
+            <img src="https://m.media-amazon.com/images/I/61qmo3MnwiL._AC_SL1500_.jpg"
+            width="55%">
+            USB Fast Charger
+        </p>
+    </div>
+</body>
+</html>
